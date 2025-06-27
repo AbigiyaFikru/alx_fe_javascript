@@ -1,32 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dynamic Quote Generator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background: #f4f4f4;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    #quoteDisplay {
+      margin: 20px auto;
+      padding: 20px;
+      max-width: 600px;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      font-size: 1.2em;
+      min-height: 50px;
+    }
+
+    .controls, .form-group {
+      max-width: 600px;
+      margin: 10px auto;
+      display: flex;
+      gap: 10px;
+    }
+
+    input {
+      flex: 1;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    button, select {
+      padding: 8px 12px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    button {
+      background-color: #007bff;
+      color: white;
+    }
+
+    button:hover {
+      opacity: 0.9;
+    }
+
+    select {
+      background-color: #ffffff;
+      border: 1px solid #ccc;
+    }
+  </style>
 </head>
 <body>
   <h1>Dynamic Quote Generator</h1>
 
-  <!-- Display random quote -->
-  <div id="quoteDisplay">Click the button to show a quote!</div>
-  <button id="newQuote">Show New Quote</button>
+  <!-- Quote Display -->
+  <div id="quoteDisplay">Click "Show New Quote" to get inspired!</div>
 
-  <!-- Quote addition form -->
-  <div style="margin-top: 20px;">
+  <!-- Controls: Category + Show Button -->
+  <div class="controls">
+    <select id="categoryFilter">
+      <option value="all">All</option>
+    </select>
+    <button id="newQuote">Show New Quote</button>
+  </div>
+
+  <!-- Add New Quote Form -->
+  <div class="form-group">
     <input id="newQuoteText" type="text" placeholder="Enter a new quote" />
     <input id="newQuoteCategory" type="text" placeholder="Enter quote category" />
     <button id="addQuoteBtn">Add Quote</button>
   </div>
 
-  <!-- Category filter dropdown -->
-  <div style="margin-top: 20px;">
-    <label for="categoryFilter">Filter by Category:</label>
-    <select id="categoryFilter">
-      <option value="all">All</option>
-    </select>
-  </div>
-
+  <!-- Script Link -->
   <script src="script.js"></script>
 </body>
 </html>
+
